@@ -24,7 +24,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
       - name: docker build and push
         run: |
-          docker build -t 4pdosc/openaios:${BRANCH_NAME} \
+          docker build -t localhost:5000/openaios:${BRANCH_NAME} \
             --build-arg VERSION=${BRANCH_NAME} \
             -f ./dockerfile/Dockerfile .
           docker push localhost:5000/openaios:${BRANCH_NAME}
